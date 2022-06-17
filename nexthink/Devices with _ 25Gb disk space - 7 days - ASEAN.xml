@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Investigation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" SyntaxVersion="3">
+  <Label>Devices with &lt; 25Gb disk space - 7 days - ASEAN</Label>
+  <Object>source</Object>
+  <Platforms>
+    <Platform>windows</Platform>
+    <Platform>mac_os</Platform>
+  </Platforms>
+  <Description />
+  <FieldList>
+    <string>name</string>
+    <string>entity</string>
+    <string>system_drive_free</string>
+    <string>system_drive_total</string>
+    <string>disks</string>
+    <string>disks_manufacturers</string>
+    <string>boot_disk_type</string>
+    <string>last_time</string>
+  </FieldList>
+  <CategoryList>
+    <string>Business Unit</string>
+    <string>Model</string>
+  </CategoryList>
+  <AggregateList />
+  <ObjectConditionList>
+    <ObjectCondition IsTemplate="false">
+      <Object>source</Object>
+      <Field>system_drive_free</Field>
+      <Comparer>&lt;=</Comparer>
+      <Value>25GB</Value>
+      <Operand>volume</Operand>
+    </ObjectCondition>
+    <ObjectCondition IsTemplate="false">
+      <Object>source</Object>
+      <Field>entity</Field>
+      <Comparer>=</Comparer>
+      <Value>("Guy Carpenter - Bangkok (TH) - Desktop", "Guy Carpenter - Bangkok (TH) - Laptop", "Guy Carpenter - Cebu (PH) - Desktop", "Guy Carpenter - Cebu (PH) - Laptop", "Guy Carpenter - Hanoi (VN) - Desktop", "Guy Carpenter - Hanoi (VN) - Laptop", "Guy Carpenter - Ho Chi Minh City (VN) - Desktop", "Guy Carpenter - Ho Chi Minh City (VN) - Laptop", "Guy Carpenter - Jakarta (ID) - Desktop", "Guy Carpenter - Jakarta (ID) - Laptop", "Guy Carpenter - Kuala Lumpur (MY) - Desktop", "Guy Carpenter - Kuala Lumpur (MY) - Laptop", "Guy Carpenter - Manila (PH) - Desktop", "Guy Carpenter - Manila (PH) - Laptop", "Guy Carpenter - Penang (MY) - Desktop", "Guy Carpenter - Penang (MY) - Laptop", "Guy Carpenter - Singapore (SG) - Desktop", "Guy Carpenter - Singapore (SG) - Laptop", "MMC - Bangkok (TH) - Desktop", "MMC - Cebu (PH) - Desktop", "MMC - Cebu (PH) - Laptop", "MMC - Hanoi (VN) - Desktop", "MMC - Ho Chi Minh City (VN) - Desktop", "MMC - Jakarta (ID) - Desktop", "MMC - Jakarta (ID) - Laptop", "MMC - Kuala Lumpur (MY) - Desktop", "MMC - Kuala Lumpur (MY) - Laptop", "MMC - Manila (PH) - Desktop", "MMC - Manila (PH) - Laptop", "MMC - Penang (MY) - Desktop", "MMC - Penang (MY) - Laptop", "MMC - Singapore (SG) - Desktop", "MMC - Singapore (SG) - Laptop", "Marsh - Bangkok (TH) - Desktop", "Marsh - Bangkok (TH) - Laptop", "Marsh - Cebu (PH) - Desktop", "Marsh - Cebu (PH) - Laptop", "Marsh - Hanoi (VN) - Desktop", "Marsh - Hanoi (VN) - Laptop", "Marsh - Ho Chi Minh City (VN) - Desktop", "Marsh - Ho Chi Minh City (VN) - Laptop", "Marsh - Jakarta (ID) - Desktop", "Marsh - Jakarta (ID) - Laptop", "Marsh - Kuala Lumpur (MY) - Desktop", "Marsh - Kuala Lumpur (MY) - Laptop", "Marsh - Manila (PH) - Desktop", "Marsh - Manila (PH) - Laptop", "Marsh - Penang (MY) - Desktop", "Marsh - Penang (MY) - Laptop", "Marsh - Singapore (SG) - Desktop", "Marsh - Singapore (SG) - Laptop", "Mercer - Bangkok (TH) - Desktop", "Mercer - Bangkok (TH) - Laptop", "Mercer - Cebu (PH) - Desktop", "Mercer - Cebu (PH) - Laptop", "Mercer - Hanoi (VN) - Desktop", "Mercer - Ho Chi Minh City (VN) - Desktop", "Mercer - Jakarta (ID) - Desktop", "Mercer - Jakarta (ID) - Laptop", "Mercer - Kuala Lumpur (MY) - Desktop", "Mercer - Kuala Lumpur (MY) - Laptop", "Mercer - Manila (PH) - Desktop", "Mercer - Manila (PH) - Laptop", "Mercer - Penang (MY) - Desktop", "Mercer - Penang (MY) - Laptop", "Mercer - Singapore (SG) - Desktop", "Mercer - Singapore (SG) - Laptop", "OWG - BANGKOK - 9TH TOWERS", "OWG - BANGKOK - PARQ", "OWG - BANGKOK - SOUTH SATHORN", "OWG - BANGKOK - SUKHUMVIT", "OWG - CEBU - MINDANAO", "OWG - HANOI - DAO DUY ANH", "OWG - HO CHI MINH CITY - TON DUC", "OWG - JAKARTA - WORLD TRADE BLG. 3", "OWG - Jakarta - World Trade Blg. 3", "OWG - KUALA LUMPUR - BANGSAR UTAMA", "OWG - KUALA LUMPUR - CENTREPOINT", "OWG - KUALA LUMPUR - Q SENTRAL", "OWG - Kuala Lumpur - Q Sentral", "OWG - MANILA - SIX/NEO", "OWG - SINGAPORE - CAPITAGREEN", "OWG - SINGAPORE - MARINA VIEW", "OWG - SINGAPORE - REHAU", "OWG - SINGAPORE - SIGNATURE", "OWG - Singapore - Capita Green")</Value>
+      <Operand>entity_string_list</Operand>
+    </ObjectCondition>
+    <ObjectCondition IsTemplate="false">
+      <Object>source</Object>
+      <Field>name</Field>
+      <Comparer>~=</Comparer>
+      <Value>"THB"</Value>
+      <Operand>string</Operand>
+    </ObjectCondition>
+  </ObjectConditionList>
+  <ObjectsConditionsExpression>1 AND (2 OR 3)</ObjectsConditionsExpression>
+  <LastDays>7</LastDays>
+</Investigation>
